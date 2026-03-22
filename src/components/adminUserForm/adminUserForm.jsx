@@ -2,10 +2,10 @@
 
 import { addUser } from "@/lib/action";
 import styles from "./adminUserForm.module.css";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 
 const AdminUserForm = () => {
-  const [state, formAction] = useFormState(addUser, undefined);
+  const [state, formAction] = useActionState(addUser, undefined);
 
   return (
     <form action={formAction} className={styles.container}>

@@ -2,13 +2,13 @@
 
 import { register } from "@/lib/action";
 import styles from "./registerForm.module.css";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const RegisterForm = () => {
-  const [state, formAction] = useFormState(register, undefined);
+  const [state, formAction] = useActionState(register, undefined);
 
   const router = useRouter();
 
@@ -18,18 +18,33 @@ const RegisterForm = () => {
 
   return (
     <form className={styles.form} action={formAction}>
-      <input type="text" placeholder="username" name="username" />
-      <input type="email" placeholder="email" name="email" />
-      <input type="password" placeholder="password" name="password" />
-      <input
-        type="password"
-        placeholder="password again"
-        name="passwordRepeat"
-      />
-      <button>Register</button>
-      {state?.error}
-      <Link href="/login">
-        Have an account? <b>Login</b>
+      <h2 className={styles.title}>Create Account</h2>
+      <p className={styles.subtitle}>Join VoyageVerse and start your adventure today</p>
+      
+      <div className={styles.inputGroup}>
+        <input type="text" placeholder="Username" name="username" required />
+      </div>
+      <div className={styles.inputGroup}>
+        <input type="email" placeholder="Email Address" name="email" required />
+      </div>
+      <div className={styles.inputGroup}>
+        <input type="password" placeholder="Password" name="password" required />
+      </div>
+      <div className={styles.inputGroup}>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          name="passwordRepeat"
+          required
+        />
+      </div>
+      
+      <button className={styles.button}>Register</button>
+      
+      {state?.error && <p className={styles.error}>{state.error}</p>}
+      
+      <Link href="/login" className={styles.link}>
+        Already have an account? <b>Login Now</b>
       </Link>
     </form>
   );

@@ -51,6 +51,15 @@ const postSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    location: {
+      type: String,
+    },
+    lat: {
+      type: Number,
+    },
+    lng: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );

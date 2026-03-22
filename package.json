@@ -9,15 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tiptap/extension-color": "^3.20.4",
+    "@tiptap/extension-highlight": "^3.20.4",
+    "@tiptap/extension-image": "^3.20.4",
+    "@tiptap/extension-link": "^3.20.4",
+    "@tiptap/extension-placeholder": "^3.20.4",
+    "@tiptap/extension-text-align": "^3.20.4",
+    "@tiptap/extension-text-style": "^3.20.4",
+    "@tiptap/extension-underline": "^3.20.4",
+    "@tiptap/pm": "^3.20.4",
+    "@tiptap/react": "^3.20.4",
+    "@tiptap/starter-kit": "^3.20.4",
     "bcryptjs": "^2.4.3",
+    "cobe": "^0.6.5",
+    "framer-motion": "^12.38.0",
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
+    "lucide-react": "^0.577.0",
     "mongoose": "^8.0.0",
-    "next": "14.0.4",
-    "next-auth": "^5.0.0-beta.3",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "^16.1.7",
+    "next-auth": "^5.0.0-beta.30",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-leaflet": "^5.0.0",
+    "react-leaflet-cluster": "^4.0.0",
+    "recharts": "^3.8.0"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "^16.1.7"
   }
 }

@@ -1,24 +1,100 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  
-  .form input{
-    padding: 20px;
-    background-color: var(--bg);
-    color: var(--textColor);
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .form button{
-    padding: 20px;
-    cursor: pointer;
-    background-color: var(--btn);
-    color: var(--textColor);
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #fff 0%, var(--text-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--text-soft);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+}
+
+.form input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  color: var(--text);
+  outline: none;
+  font-size: 1rem;
+  transition: var(--transition);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.form input:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 0 25px var(--primary-glow),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.button {
+  width: 100%;
+  padding: 1.1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.75rem;
+  box-shadow: 0 10px 30px rgba(124, 77, 255, 0.3);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 20px 40px var(--primary-glow);
+}
+
+.error {
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  border: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+.link {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.link b {
+  color: var(--accent);
+  margin-left: 0.5rem;
+  transition: var(--transition);
+}
+
+.link:hover b {
+  text-shadow: 0 0 10px var(--accent);
+}

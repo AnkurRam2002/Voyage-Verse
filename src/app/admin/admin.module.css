@@ -1,36 +1,104 @@
 .container {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.pageTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #fff 0%, var(--text-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statsContainer {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  flex: 1;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: var(--transition);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.statIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(124, 77, 255, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  border: 1px solid rgba(124, 77, 255, 0.2);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statTitle {
+  font-size: 0.875rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+}
+
+.row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+
+.row h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #ffffff, #b0b0d0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col {
+  flex: 1;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 2rem;
+  padding: 40px;
+}
+
+@media (max-width: 1024px) {
   .row {
-    display: flex;
-    gap: 100px;
+    flex-direction: column;
+    gap: 40px;
   }
-  
-  .row h1{
-    font-size: 24px;
-    font-weight: 300;
-  }
-  
-  .col {
-    flex: 1;
-  }
-  
-  .col  img {
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .line{
-    margin: 100px;
-    color: var(--bgSoft)
-  }
-  
-  @media (max-width: 768px) {
-    .row {
-      flex-direction: column;
-    }
-  }
+}
