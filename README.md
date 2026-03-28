@@ -1,5 +1,7 @@
 <div align="center">
 
+![Voyage Verse Hero](file:///C:/Users/Ankur%20Ram/.gemini/antigravity/brain/38f00c04-7b6e-48bd-bb8c-f41d731ab378/voyage_verse_hero_1774238886499.png)
+
 # 🗺️ VoyageVerse
 **A premium, full-stack travel storytelling platform built with Next.js 15, Auth.js v5, and MongoDB.**
 
@@ -8,8 +10,7 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
 [![Tailwind](https://img.shields.io/badge/CSS-Vanilla-blue?style=for-the-badge&logo=css3)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-[Explore Stories](https://voyage-verse.vercel.app/blog) · [Admin Dashboard](https://voyage-verse.vercel.app/admin) · [Report Bug](https://github.com/AnkurRam2002/Ecommerce-Store/issues)
-
+[Explore Stories](https://voyage-verse.vercel.app/blog)
 </div>
 
 ---
