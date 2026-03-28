@@ -1,59 +1,143 @@
 .container {
-    display: flex;
-    gap: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 120px);
+  text-align: center;
+  padding-top: 5vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 84px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.title span {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.secondaryButton {
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: -50px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.globeWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.glow {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(124, 77, 255, 0.4) 0%, rgba(0, 229, 255, 0.1) 40%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.globeLabel {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 0;
+  z-index: 10;
+  text-align: center;
+}
+
+.globeLabel h3 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+.globeLabel p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--textSoft);
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 64px;
   }
-  
-  .textContainer {
-    flex: 1;
-    display: flex;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 2vh;
+  }
+  .title {
+    font-size: 48px;
+  }
+  .imageContainer {
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 42px;
+  }
+  .buttons {
     flex-direction: column;
-    gap: 50px;
+    width: 100%;
   }
-  
-  .title{
-    font-size: 80px;
-    text-align: center;
+  .buttons a {
+    width: 100%;
   }
-  
-  .desc{
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .buttons{
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-  }
-  
-  .button{
-    padding: 20px;
-    min-width: 120px;
-    cursor: pointer;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: large;
-    
-  }
-  
-  @media (max-width: 1024px) {
-    .container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .buttons{
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .title {
-      font-size: 64px;
-    }
-  
-    .brands{
-      width: 100%;
-    }
-  }
+}

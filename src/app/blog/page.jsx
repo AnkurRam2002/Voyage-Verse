@@ -1,33 +1,28 @@
-import PostCard from '@/components/postCard/postCard'
+import BlogList from './BlogList'
 import styles from './blog.module.css'
 import React from 'react'
 
 export const metadata = {
-  title: "Blog Page",
-  description: "Blog description",
+  title: "Stories | Voyage Verse",
+  description: "Explore a collection of captivating travel stories from around the globe.",
 };
 
-const getData = async () => {
-  const res = await fetch("https://voyage-verse.vercel.app/api/blog", {next:{revalidate:1800}});
-
-  if (!res.ok) {
-    throw new Error("Something went wrong");
-  }
-
-  return res.json();
-};
+const BASE_URL = process.env.NODE_ENV === 'development'
+  ? process.env.NEXT_PUBLIC_DEV_URL
+  : process.env.NEXT_PUBLIC_PROD_URL;
 
 const BlogPage = async () => {
-
-  const posts = await getData();
+  let posts = [];
+  try {
+    const res = await fetch(`${BASE_URL}/api/blog`, { next: { revalidate: 60 } });
+    if (res.ok) posts = await res.json();
+  } catch (e) {
+    console.error('Failed to fetch posts:', e);
+  }
 
   return (
     <div className={styles.container}>
-      {posts.map((post) => (
-        <div className={styles.post} key={post.id}>
-          <PostCard post={post} />
-        </div>
-      ))}
+      <BlogList posts={posts} />
     </div>
   );
 };

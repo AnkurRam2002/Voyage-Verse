@@ -1,13 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images:{
-        remotePatterns:[
-          {
-            protocol: 'https',
-            hostname: "images.pexels.com"
-          }
-        ]
+  experimental: {
+    turbopack: {
+      root: __dirname,
+    },
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
       },
-}
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "**",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

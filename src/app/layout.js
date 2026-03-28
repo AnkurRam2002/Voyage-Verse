@@ -2,16 +2,16 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
-
+import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: {
-    default:"Next.js 14 Homepage",
-    template:"Next.js 14 %s"
+    default: "Voyage Verse | Explore the World",
+    template: "%s | Voyage Verse"
   },
-  description: "Next.js starter app description",
+  description: "Your ultimate destination for captivating travel stories and adventures.",
 };
 
 export default function RootLayout({ children }) {
@@ -19,9 +19,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className='container'>
-        <Navbar />
-        {children}
-        <Footer />
+          <Suspense fallback={null}>
+            <Navbar />
+          </Suspense>
+          <main style={{ flex: 1 }}>
+            <Suspense fallback={null}>
+              {children}
+            </Suspense>
+          </main>
+          <Footer />
         </div>
         </body>
     </html>

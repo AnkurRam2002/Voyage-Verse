@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  min-height: 80vh;
+}
+
+.profileCard {
+  width: 100%;
+  max-width: 600px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 2rem;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  object-fit: cover;
+  box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.email {
+  color: var(--text-soft);
+  font-size: 1rem;
+}
+
+.tags {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.statItem {
+  background: rgba(124, 77, 255, 0.05);
+  border: 1px solid rgba(124, 77, 255, 0.1);
+  border-radius: 1.5rem;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.statIcon {
+  color: var(--primary);
+}
+
+.statDesc {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.statTitle {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bio h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.bio p {
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.editBtn {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 14px;
+  border-radius: 1rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.editBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 0 30px var(--primary-glow);
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .tags {
+    justify-content: center;
+  }
+}

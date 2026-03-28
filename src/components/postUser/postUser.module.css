@@ -1,25 +1,29 @@
-.container{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .avatar{
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .texts{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .title{
-    color: gray;
-    font-weight: bold;
-  }
-  
-  .username{
-    font-weight: 500;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.username {
+  font-weight: 700;
+  color: #ffffff;
+}

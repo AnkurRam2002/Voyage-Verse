@@ -1,27 +1,120 @@
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bgImage {
+  object-fit: cover;
+  filter: brightness(0.6) saturate(1.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(3, 0, 20, 0.4) 100%);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.card {
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 15, 60, 0.92) 0%, 
+    rgba(8, 8, 35, 0.96) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3.5rem 3rem;
+  border-radius: 2.5rem;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.6),
+    inset 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.divider {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.divider::before {
+  margin-right: 1.5rem;
+}
+
+.divider::after {
+  margin-left: 1.5rem;
+}
+
+.github {
+  width: 100%;
+  padding: 1.1rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.github:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.github:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 1rem;
   }
   
-  .wrapper{
-    width: 500px;
-    background-color: var(--bgSoft);
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-    border-radius: 5px;
+  .card {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1.5rem;
   }
-  
-  .github{
-    width: 100%;
-    padding: 20px;
-    cursor: pointer;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-  }
+}

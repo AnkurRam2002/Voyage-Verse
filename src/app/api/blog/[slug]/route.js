@@ -3,7 +3,7 @@ import { connectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
 
 export const GET = async (request, { params }) => {
-  const { slug } = params;
+  const { slug } = await params;
 
   try {
     connectToDb();
@@ -17,7 +17,7 @@ export const GET = async (request, { params }) => {
 };
 
 export const DELETE = async (request, { params }) => {
-  const { slug } = params;
+  const { slug } = await params;
 
   try {
     connectToDb();

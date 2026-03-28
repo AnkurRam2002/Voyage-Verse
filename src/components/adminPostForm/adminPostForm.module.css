@@ -1,25 +1,63 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .container input,
-  .container textarea,
-  .container select {
-    padding: 20px;
-    background-color: var(--bgSoft);
-    border: none;
-    border-radius: 5px;
-    color: var(--textColor);
-  }
-  
-  .container button {
-    padding: 20px;
-    cursor: pointer;
-    background-color: var(--btn);
-    border: none;
-    border-radius: 5px;
-    color: var(--textColor);
-    font-weight: bold;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container input,
+.container textarea,
+.container select {
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text);
+  outline: none;
+  transition: var(--transition);
+}
+
+.container input:focus,
+.container textarea:focus,
+.container select:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.publishBtn {
+  padding: 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.publishBtn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.editorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.editorLabel {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background: rgba(255, 77, 77, 0.1);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 77, 77, 0.2);
+}
