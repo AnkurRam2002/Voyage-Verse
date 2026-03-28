@@ -1,6 +1,6 @@
 <div align="center">
 
-![Voyage Verse Hero](file:///C:/Users/Ankur%20Ram/.gemini/antigravity/brain/38f00c04-7b6e-48bd-bb8c-f41d731ab378/voyage_verse_hero_1774238886499.png)
+![Voyage Verse Hero](https://drive.google.com/uc?export=download&id=1K1_MvUyrfH4YfZnge9cAHHhXCQ0zyRY5)
 
 # 🗺️ VoyageVerse
 **A premium, full-stack travel storytelling platform built with Next.js 15, Auth.js v5, and MongoDB.**
